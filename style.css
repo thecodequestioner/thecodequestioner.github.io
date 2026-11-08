@@ -1,207 +1,391 @@
-/* Google Font CDN Link */
-@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Poiret+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Didact+Gothic&family=Poiret+One&display=swap');
+/* ==========================================================
+   THEME: change branding here only
+   ========================================================== */
+:root {
+  /* Colours */
+  --color-bg: #1f242d;
+  --color-surface: #283040;
+  --color-text: #ffffff;
+  --color-muted: #b8c2d1;
+  --color-accent: #3399ff;
+  --color-accent-hover: #66b2ff;
+  --color-focus: #66b2ff;
+  --color-border: rgba(184, 194, 209, 0.18);
 
+  /* Font */
+  --font-body: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
-* {
+  /* Layout */
+  --content-width: 880px;
+  --radius: 10px;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+}
+
+/* ==========================================================
+   BASE
+   ========================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-  /* font-family: 'Rationale', sans-serif; */
-  scroll-behavior: smooth;
+}
+
+html {
+  background: var(--color-bg); /* avoids a white flash while loading */
 }
 
 body {
-  background: #1f242d;
-  color: #fff;
-}
-
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 20px 10%;
-  background: transparent;
+  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 100;
+  flex-direction: column;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
-.logo {
-  font-size: 25px;
-  color: #fff;
-  text-decoration: none;
+a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+h1,
+h2,
+h3 {
   font-weight: 600;
-  cursor: default;
-  opacity: 0;
-  animation: slideRight 1s ease forwards;
-  font-family: 'Poiret One', sans-serif;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
 }
 
-.logo kw {
-  color: #0080ff;
-  font-family: 'Bai Jamjuree', sans-serif;
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
 }
 
-
-.navbar a {
-  display: inline-block; /*makes move up animation like showing off from a bit lower part of the screen*/
-  font-size: 18px;
-  color: #fff;
+.skip-link {
+  position: absolute;
+  left: var(--space-2);
+  top: -100px;
+  z-index: 10;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-text);
   text-decoration: none;
-  font-weight: 500;
-  margin-left: 13px; /*35px;*/
-  transition: .3s;
-  opacity: 0;
-  animation: slideTop .5s ease forwards;
-  animation-delay: calc(.2s * var(--i));
-  font-family: 'Didact Gothic', sans-serif;
 }
 
-.navbar a:hover,
-.navbar a.active {
-  color: #3399ff;
+.skip-link:focus {
+  top: var(--space-2);
 }
 
-.home {
-  position: relative;
+/* ==========================================================
+   LAYOUT
+   ========================================================== */
+.site-header {
   width: 100%;
-  height: 92vh; /*adjust for footer inclusion*/
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: var(--space-3) 1.25rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 70px 10% 0;
+  gap: var(--space-2);
 }
 
-.home-content {
-  max-width: 600px; /*adjust to what extent the text go to the right*/
+main {
+  flex: 1;
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: var(--space-4) 1.25rem;
 }
 
-.home-content h3 {
-  font-size: 32px;
-  font-weight: 700;
-  opacity: 0;
-  animation: slideBottom 1s ease forwards;
-  animation-delay: .7s;
-  font-family: 'Didact Gothic', sans-serif;
-
-}
-
-.home-content h3:nth-of-type(2) {
-  margin-bottom: 30px;
-  animation: slideTop 1s ease forwards;
-  animation-delay: .7s;
-}
-
-.home-content h3 span {
-  color: #3399ff; /*#0ef*/
-}
-
-.home-content h1 {
-  font-size: 56px; /*base was 56px*/
-  font-weight: 700;
-  margin: -3px 0;
-  opacity: 0;
-  animation: slideRight 1s ease forwards;
-  animation-delay: 1s;
-  font-family: 'Poiret One', sans-serif;
-}
-
-.social-media a {
-  display: inline-flex;
+/* Home: centre the intro in the space between header and footer */
+.home-main {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  background: transparent;
-  border: 2px solid #3399ff;
-  border-radius: 50%;
-  font-size: 20px;
-  color: #3399ff;
+}
+
+.site-footer {
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: var(--space-3) 1.25rem;
+  color: var(--color-muted);
+  font-size: 0.875rem;
+}
+
+/* ==========================================================
+   HEADER / NAV / LOGO
+   ========================================================== */
+.logo {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
   text-decoration: none;
-  margin: 30px 15px 30px 0;
-  transition: .5s ease;
-  opacity: 0;
-  animation: slideLeft 1s ease forwards;
-  animation-delay: calc(.2s * var(--i));
-
 }
 
-.social-media a:hover {
-  background: #3399ff;
-  color: #1f242d;
-  box-shadow: 0 0 20px #3399ff;
+.logo:hover {
+  color: var(--color-accent);
 }
 
-
-.footer {
-  background: transparent;
-  padding: 15px 0;
-  text-align: center;
-  font-family: 'Poiret One', sans-serif;
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: var(--space-3);
 }
 
-.footer .text span {
-  font-size: 17px;
+.site-nav a {
+  color: var(--color-muted);
+  text-decoration: none;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
+
+/* ==========================================================
+   HOME
+   ========================================================== */
+
+.hero-title {
+  max-width: 22ch;
+  font-size: clamp(1.3rem, 5vw, 2.1rem);
   font-weight: 400;
-  color: #fff;
+  letter-spacing: -0.01em;
+  color: var(--color-muted);
 }
 
-.footer .text span kw {
-  color: #0080ff;
-  font-family: 'Bai Jamjuree', sans-serif;
+.hero-name {
+  margin-bottom: var(--space-2);
+  font-size: clamp(1.3rem, 5vw, 2.1rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-muted);
 }
 
 
-/* keyframes animation */
+.typed {
+  color: var(--color-accent);
+}
 
-@keyframes slideRight {
-  0% {
-    transform: translateX(-100px);
-    opacity: 0;
+.typed-cursor {
+  color: var(--color-accent);
+}
+
+.hero-intro {
+  max-width: 52ch;
+  margin-top: var(--space-3);
+  font-size: 1.15rem;
+  color: var(--color-muted);
+}
+
+.hero-actions {
+  margin-top: var(--space-3);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.5rem 1.1rem;
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius);
+  color: var(--color-accent);
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.button:hover {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  text-decoration: none;
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  color: var(--color-muted);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.social-links a:hover {
+  color: var(--color-text);
+  border-color: var(--color-accent);
+  text-decoration: none;
+}
+
+.social-links svg {
+  width: 20px;
+  height: 20px;
+}
+
+.icon-stroke {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ==========================================================
+   PAGE TITLES, ABOUT, CONTACT
+   ========================================================== */
+.page-title {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-3);
+}
+
+.lead {
+  max-width: 60ch;
+  margin-bottom: var(--space-3);
+  font-size: 1.15rem;
+  color: var(--color-text);
+}
+
+.prose p {
+  max-width: 60ch;
+  color: var(--color-muted);
+}
+
+.about-section {
+  margin-top: var(--space-4);
+}
+
+.section-title {
+  margin-bottom: var(--space-2);
+  font-size: 1.25rem;
+}
+
+.poem {
+  padding-left: var(--space-3);
+  border-left: 2px solid var(--color-accent);
+  color: var(--color-muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+
+/* ==========================================================
+   PROJECT LIST
+   ========================================================== */
+.project-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.project-card h2 {
+  font-size: 1.15rem;
+}
+
+.project-card p {
+  max-width: 60ch;
+  color: var(--color-muted);
+}
+
+.tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+}
+
+.tags li {
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(51, 153, 255, 0.15);
+  color: var(--color-accent-hover);
+  font-size: 0.8rem;
+}
+
+.card-link {
+  align-self: flex-start;
+  margin-top: var(--space-1);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* ==========================================================
+   SMALL SCREENS
+   ========================================================== */
+@media (max-width: 600px) {
+  .site-nav ul {
+    gap: var(--space-2);
   }
 
-  100% {
-    transform: translateX(0);
-    opacity: 1;
+  main {
+    padding-top: var(--space-3);
   }
 }
 
-@keyframes slideLeft {
-  0% {
-    transform: translateX(100px);
-    opacity: 0;
+/* ==========================================================
+   REDUCED MOTION
+   ========================================================== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideTop {
-  0% {
-    transform: translateY(100px);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideBottom {
-  0% {
-    transform: translateY(-100px);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateY(0);
-    opacity: 1;
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
   }
 }

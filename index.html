@@ -1,47 +1,67 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8">
-    <title>Portfolio | TheCodeQuestioner</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-  <body>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Information systems and data analyst building solutions that matter.">
+  <title>The{code}questioner</title>
 
-    <header class="header">
-      <a href="https://thecodequestioner.github.io/" class="logo">The<kw>{code}</kw>questioner.</a>
-      <nav class="navbar">
-        <a href="projects.html" style="--i:1;" class="active">Projects.</a>
-        <!-- <a href="https://github.com/thecodequestioner" style="--i:2;">Tutorials.</a> -->
-        <a href="about.html" style="--i:3;">About.</a>
-      </nav>
-    </header>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
-    <section class="home">
-      <div class="home-content">
-        <h3>Hi!</h3>
-        <h1>I am learning</h1>
-        <!-- [...under construction...] -->
-        <h3><span class="dynamic-text"></span></h3> <!-- resilience + moved out -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-        <div class="social-media">
-          <a href="https://github.com/thecodequestioner" target="_blank" rel="noopener noreferrer" style="--i:4"><i class='fab fa-github'></i></a>
-          <!-- <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" style="--i:5"><i class='fab fa-youtube'></i></a>  -->
-          <a href="mailto:student.diagram802@passfwd.com" target="_blank" rel="noopener noreferrer" style="--i:6"><i class='fas fa-envelope'></i></a>
-        </div>
-      </div>
+  <header class="site-header">
+    <a class="logo" href="index.html">The{code}questioner</a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="home-main">
+    <section class="hero">
+      <h1 class="hero-name">The Code Questioner,</h1>
+      <p class="hero-title">
+        questioning not just code, but also
+        <span class="typed"><span class="dynamic-text" aria-hidden="true">the data</span><span class="visually-hidden" data-typed-list></span></span>
+      </p>
+      <p class="hero-intro">An information systems and data analyst building solutions that matter.</p>
+
+      <p class="hero-actions">
+        <a class="button" href="projects.html">View projects</a>
+      </p>
+
+      <ul class="social-links">
+        <li>
+          <a href="https://github.com/thecodequestioner" aria-label="GitHub">
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 .5C5.37.5 0 5.78 0 12.292c0 5.211 3.438 9.63 8.205 11.188.6.111.82-.254.82-.567 0-.28-.01-1.022-.015-2.005-3.338.711-4.042-1.582-4.042-1.582-.546-1.361-1.335-1.723-1.335-1.723-1.087-.731.084-.716.084-.716 1.205.082 1.838 1.217 1.838 1.217 1.07 1.8 2.809 1.28 3.495.978.108-.76.417-1.28.76-1.575-2.665-.296-5.466-1.302-5.466-5.793 0-1.28.468-2.327 1.236-3.147-.124-.297-.535-1.49.117-3.106 0 0 1.008-.318 3.3 1.203a11.7 11.7 0 0 1 3.003-.399c1.02.005 2.047.136 3.005.399 2.29-1.521 3.297-1.203 3.297-1.203.653 1.616.242 2.809.118 3.106.77.82 1.235 1.867 1.235 3.147 0 4.502-2.807 5.494-5.48 5.784.43.36.814 1.075.814 2.167 0 1.565-.014 2.827-.014 3.212 0 .315.216.682.825.566C20.565 21.918 24 17.5 24 12.292 24 5.78 18.627.5 12 .5z"/>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:student.diagram802@passfwd.com" aria-label="Email">
+            <svg class="icon-stroke" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+              <rect x="3" y="5" width="18" height="14" rx="2"/>
+              <path d="m3 7 9 6 9-6"/>
+            </svg>
+          </a>
+        </li>
+      </ul>
     </section>
+  </main>
 
-    <footer class="footer">
-      <div class="text">
-        <span>&#169; The<kw>{code}</kw>questioner</span>
-      </div>
-    </footer>
-
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script src="script.js"></script>
-  </body>
+  <footer class="site-footer">
+    <p>&copy; <span data-year></span> The{code}questioner</p>
+  </footer>
+</body>
 </html>
-
-

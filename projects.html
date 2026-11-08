@@ -1,47 +1,70 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8">
-    <title>Projects | TheCodeQuestioner</title>
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-      .custom_h1 {
-        font-size: 2.3em;
-        justify-content: center;
-        align-items: center;
-        color: #0080ff;
-        font-family: 'Courier New', Courier;
-        text-align: center;
-      }
-      .loading {
-        font-size: 1.5em;
-        margin-top: 20px;
-        text-align: center;
-        font-family: 'Courier New', Courier;
-      }
-    </style>
-  </head>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Selected data and information systems projects by The{code}questioner.">
+  <title>Projects · The{code}questioner</title>
 
-  <body>
-    <header class="header">
-      <a href="https://thecodequestioner.github.io/" class="logo">The<kw>{code}</kw>questioner.</a>
-    </header>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
-    <section class="home">
-      <div>
-        <h1 class='custom_h1'>Coming Soon...</h1>
-        <div class="loading">🚀 Under Development 🚀</div>
-      </div>
-    </section>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <footer class="footer">
-      <div class="text">
-        <span>&#169; The<kw>{code}</kw>questioner</span>
-      </div>
-    </footer>
+  <header class="site-header">
+    <a class="logo" href="index.html">The{code}questioner</a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="projects.html" aria-current="page">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script src="script.js"></script>
-  </body>
+  <main id="main">
+    <h1 class="page-title">Projects</h1>
+
+    <ul class="project-list">
+      <li>
+        <article class="project-card">
+          <h2>hudhud: Education opportunities for youth</h2>
+          <p>An online database that helps young people find affordable education and training opportunities.</p>
+          <ul class="tags" aria-label="Tools and methods">
+            <li>Python</li>
+            <li>Flask</li>
+            <li>SQL</li>
+          </ul>
+          <a class="card-link" href="https://hudhud-0a5b.onrender.com" target="_blank" rel="noopener noreferrer">
+            View project<span class="visually-hidden"> (opens in a new tab): hudhud</span>
+          </a>
+        </article>
+      </li>
+
+      <li>
+        <article class="project-card">
+          <h2>Data on the map: Afghanistan’s provinces</h2>
+          <p>A Python command-line tool that creates choropleth maps of Afghanistan’s provinces from CSV data.</p>
+          <ul class="tags" aria-label="Tools and methods">
+            <li>Python</li>
+            <li>GeoJSON</li>
+            <li>CLI</li>
+          </ul>
+          <a class="card-link" href="https://github.com/thecodequestioner/afg_province_maps" target="_blank" rel="noopener noreferrer">
+            View project<span class="visually-hidden"> (opens in a new tab): Data on the map</span>
+          </a>
+        </article>
+      </li>
+
+    </ul>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span data-year></span> The{code}questioner</p>
+  </footer>
+</body>
 </html>

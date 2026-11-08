@@ -1,40 +1,69 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8">
-    <title>About | TheCodeQuestioner</title>
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="About The{code}questioner: information systems and data analysis.">
+  <title>About · The{code}questioner</title>
 
-  <body>
-    <header class="header">
-      <a href="https://thecodequestioner.github.io/" class="logo">The<kw>{code}</kw>questioner.</a>
-    </header>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
-    <section class="home">
-      <div>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-        <h1 style="color: #E0FFFF; font-family: 'Arial', sans-serif; font-size: 1.1em; text-align: left; margin-bottom: 20px;">...</h1>
-        <p style="color: #E0FFFF; font-family: 'Courier New', Courier, monospace; font-size: 1.2em; line-height: 1.6;">
-          I am a traveler<br>
-          with dreams in my heart,<br>
-          and horizons ahead,<br>
-          constantly exploring<br>
-          destination after destination.<br>
-          In search of wisdom.<br>
-          .
-        </p>
-      </div>
+  <header class="site-header">
+    <a class="logo" href="index.html">The{code}questioner</a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <h1 class="page-title">About</h1>
+
+    <p class="lead">
+      I work at the intersection of information systems and data analysis.
+      I build tools and analyses that turn data into insights that people can use to make decisions.
+    </p>
+
+    <div class="prose">
+      <p>
+        My recent work covers MSME finance, education, climate,
+        geographic data, and forecasting.
+      </p>
+    </div>
+
+    <section class="about-section" aria-labelledby="journey-title">
+      <h2 id="journey-title" class="section-title">Notes from the road</h2>
+      <p class="poem">
+        I am a traveler<br>
+        with dreams in my heart,<br>
+        and horizons ahead,<br>
+        constantly exploring<br>
+        destination after destination.<br>
+        In search of wisdom.
+      </p>
     </section>
 
-    <footer class="footer">
-      <div class="text">
-        <span>&#169; The<kw>{code}</kw>questioner</span>
-      </div>
-    </footer>
+    <section class="about-section" aria-labelledby="contact-title">
+      <h2 id="contact-title" class="section-title">Contact</h2>
+      <p>
+        <a href="mailto:student.diagram802@passfwd.com">Email</a>
+        or find me on <a href="https://github.com/thecodequestioner">GitHub</a>.
+      </p>
+    </section>
+  </main>
 
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script src="script.js"></script>
-  </body>
+  <footer class="site-footer">
+    <p>&copy; <span data-year></span> The{code}questioner</p>
+  </footer>
+</body>
 </html>
