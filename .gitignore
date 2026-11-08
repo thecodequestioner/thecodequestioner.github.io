@@ -1,2 +1,4 @@
 # Ignore everything in the _temp folder
 _temp/
+.idea/
+_v*
